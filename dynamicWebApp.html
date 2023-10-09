@@ -3,32 +3,32 @@
 <head>
 	<title>JSON raw data</title>
 	<script>
-//API url https://finalspaceapi.com/docs/
-const URL = 'https://finalspaceapi.com/api/v0/';
-var arrayReceived;
-
-function getText4() {
-	fetch(URL)						//get the raw answer
-		.then( res => res.json() )			//return: object with
-		.then( data => processFetchDataDog ( data ) );
-}
-function processFetchDataDog( rData )
-{
-	arrayReceived = rData;
-	//console.log(rData);
-	for (let i = 0; i < arrayReceived.length; i++) {
-		console.log(arrayReceived[i]);
-	}
-	document.getElementById("firstP").innerHTML = JSON.stringify(rData);
-}
+		//API url https://finalspaceapi.com/docs/
+		const urlBase = 'https://finalspaceapi.com/api/v0/';
+		//https://finalspaceapi.com/api/v0/character
+		//https://finalspaceapi.com/api/v0/location
+		//https://finalspaceapi.com/api/v0/episode
+		//https://finalspaceapi.com/api/v0/quote
+		var arrayReceived;
 	</script>
-
+	<style type="text/css">
+		.menu{border: 1px solid}
+	</style>
+	<script src="Core.js"></script>
 </head>
 <body>
-	<h1>Weather</h1>
-	<p id="firstP"></p>
+	<h1>Final Space</h1>
+	<table id=menu style="border-collapse:collapse">
+		<tr>
+			<td id="locations" class = "menu" onclick = "displayLocations(urlBase+'location')">Locations</td>
+			<td id="characters" class = "menu" onclick = "displayCharacters(urlBase+'character')">Characters</td>
+			<td id="quotes" class = "menu" onclick="displayQuotes(urlBase+'quote')">Quotes</td>
+			<td id="episodes" class = "menu" onclick = "displayEpisodes(urlBase+'episode')">Episodes</td>
+		</tr>
+	</table>
+	
+
 	<script>
-		getText4();
 	</script>
 </body>
 </html>
