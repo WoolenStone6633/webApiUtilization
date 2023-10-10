@@ -1,28 +1,41 @@
-function displayCharacters(url) {  //displays a list of charactes
+function displayCharacters() {  //displays a list of charactes
     fetch(url)
         .then(res => res.json())
         .then(arr => function() {
             
         });
 }
-function displayLocations(url) {  //displays a list of locations
+function characterClick(url) {  //The url passed should have a specified character, using the character id
+
+}
+
+
+function displayLocations() {  //displays a list of locations
     fetch(url)
         .then(res => res.json())
         .then(arr => function() {
             
         });
 }
-function displayEpisodes(url) {  //diplays a list of episode names
+function locationClick(url) { //The url passed should have a specified location, using the location id
+
+}
+
+
+function displayEpisodes() {  //diplays a list of episode names
     fetch(url)
         .then(res => res.json())
         .then(arr => function() {
 
         });
 }
+function episodeClick(url) { //The url passed should have a specified episode, using the episode id
+
+}
+
 
 function displayQuotes() { //displays a list of quotes
 	url = urlBase + 'quote';
-    console.log(url);
     console.log("QuoteClicked");
 	fetch(url)						//get the raw answer
         .then(res => res.json())			//return: object with
@@ -41,11 +54,15 @@ function displayQuotes() { //displays a list of quotes
             document.getElementById("display").innerHTML = innerText;
         });
 }
-
 function quoteClick(url, num){
+    let innerText = "<tr><td>";
     fetch(url)
         .then(res => res.json())
         .then(arr => {
-            document.getElementById("display").innerHTML="<tr><td>"+ arr[num].quote +"<br> Said by: "+ arr[num].quoteBy +"<td><tr>";
+            innerText += arr[num].quote;
+            innerText += "<br> Said by: " + arr[num].by;
+            innerText += "<br><img src=" + arr[num].image + ">";
+            innerText += "</td></tr>";
+            document.getElementById("display").innerHTML= innerText;
         });
 }
