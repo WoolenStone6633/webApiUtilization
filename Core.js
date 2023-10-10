@@ -1,5 +1,4 @@
 
-
 function displayCharacters(url) {  //displays a list of charactes
     fetch(url)
         .then(res => res.json())
@@ -26,17 +25,21 @@ function displayQuotes(url) { //displays a list of quotes
 	fetch(url)						//get the raw answer
         .then(res => res.json())			//return: object with
         .then(arr => {
-            console.log("hi");
-            let innerText = "<table>\n<tr><th>Quotes</th></tr>\n";  //This is where you start your table block
+            let innerText = "\n<tr><th>Quotes</th></tr>\n";  //This is where you start your table block
             // "<h3>Quotes</h3>\n
             // <table>\n
             // <tr><th>Quotes/th></tr>\n"
             for (let i = 0; i < arr.length; i++) {
-                let attach = 'onclick="quoteClick( \'' + arr[i] + "');\"";
-		        innerText+="<tr><td><a " + attach + ">" + arr[i].quote +"</a></td></tr>\n";
+                let attach = "onclick='quoteClick("+'"' + arr[i].quote +'"'+','+'"' + arr[i].by + '"' + ")';";
+                //onclick="quoteClick(arr[i].quote,arr[i].by)";
+		        innerText+="<tr><td ><a " + attach + ">" + arr[i].quote +"</a></td></tr>\n";
             }
-            innerText += "</table>\n";
-            document.getElementById("menu").innerHTML = innerText;
+            innerText += "\n";
+            document.getElementById("display").innerHTML = innerText;
         });
-	//getelementById("menu").append
+}
+
+function quoteClick(quote, quoteBy){
+    console.log(quote, quoteBy);
+    document.getElementById("display").innerHTML="<tr><td>"+quote+"<br> Said by: "+quoteBy+"<td><tr>";
 }

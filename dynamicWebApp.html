@@ -1,4 +1,4 @@
-5<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>JSON raw data</title>
@@ -13,12 +13,14 @@
 	</script>
 	<style type="text/css">
 		.menu{border: 1px solid}
+		.displayItem{border: 1px solid}
+		td:hover {background-color:darkgrey}
 	</style>
 	<script src="Core.js"></script>
 </head>
 <body>
 	<h1>Final Space</h1>
-	<table id=menu style="border-collapse:collapse">
+	<table id="menu" style="border-collapse:collapse">
 		<tr>
 			<td id="locations" class = "menu" onclick = "displayLocations(urlBase+'location')">Locations</td>
 			<td id="characters" class = "menu" onclick = "displayCharacters(urlBase+'character')">Characters</td>
@@ -26,6 +28,7 @@
 			<td id="episodes" class = "menu" onclick = "displayEpisodes(urlBase+'episode')">Episodes</td>
 		</tr>
 	</table>
+	<table id="display" style="border-collapse:collapse "> </table>
 	
 
 	<script>
