@@ -15,6 +15,7 @@
 		.menu{border: 1px solid}
 		.displayItem{border: 1px solid}
 		td:hover {background-color:darkgrey}
+		tr:nth-child(even) {background-color: lightgray}
 	</style>
 	<script src="Core.js"></script>
 </head>
@@ -24,7 +25,7 @@
 		<tr>
 			<td id="locations" class = "menu" onclick = "displayLocations(urlBase+'location')">Locations</td>
 			<td id="characters" class = "menu" onclick = "displayCharacters(urlBase+'character')">Characters</td>
-			<td id="quotes" class = "menu" onclick="displayQuotes(urlBase+'quote')">Quotes</td>
+			<td id="quotes" class = "menu" onclick="displayQuotes()">Quotes</td>
 			<td id="episodes" class = "menu" onclick = "displayEpisodes(urlBase+'episode')">Episodes</td>
 		</tr>
 	</table>
