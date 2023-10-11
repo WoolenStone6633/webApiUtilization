@@ -4,7 +4,7 @@ function displayCharacters() {  //displays a list of charactes
     fetch(url)
         .then(res => res.json())
         .then(arr => {
-            let innerText = "\n<tr><th>Characters</th></tr>\n";  //This is where you start your table block
+            let innerText = "\n<tr><th>Characters</th></tr>\n";  //This is where the table block starts
             // <tr><th>Characters/th></tr>\n"
             for (let i = 0; i < arr.length; i++) {
                 let characterUrl = url + "/" + (i + 1);
