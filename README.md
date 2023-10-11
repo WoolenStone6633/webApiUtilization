@@ -1,2 +1,2 @@
 # webApiUtilization
-Using the final space web API to create a web app for exploring the information
+A web-based application that uses the Final Space API to display different information about the show
